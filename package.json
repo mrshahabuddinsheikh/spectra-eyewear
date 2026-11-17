@@ -1,0 +1,30 @@
+{
+  "name": "spectra-eyewear-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ultra-fast premium Eyewear e-commerce with Procedural 3D Customizer, Shoppable Reels, COD 1-Page Checkout, and Fastify API for South Asian / Pakistan market",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "dev:api": "npm run dev --workspace=apps/api",
+    "build": "npm run build --workspace=apps/api && npm run build --workspace=apps/web",
+    "build:api": "npm run build --workspace=apps/api",
+    "build:web": "npm run build --workspace=apps/web",
+    "seed": "npm run seed --workspace=apps/api",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "eyewear",
+    "sunglasses",
+    "threejs",
+    "react-three-fiber",
+    "cod-pakistan",
+    "fastify",
+    "nextjs",
+    "drizzle-orm"
+  ],
+  "author": "Spectra Eyewear PK",
+  "license": "MIT"
+}
