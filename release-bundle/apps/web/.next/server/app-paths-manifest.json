@@ -1,0 +1,17 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/backup/page": "app/admin/backup/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/products/page": "app/admin/products/page.js",
+  "/admin/reels/page": "app/admin/reels/page.js",
+  "/admin/risk/page": "app/admin/risk/page.js",
+  "/admin/social-proof/page": "app/admin/social-proof/page.js",
+  "/checkout/page": "app/checkout/page.js",
+  "/customizer/page": "app/customizer/page.js",
+  "/order/[orderNumber]/page": "app/order/[orderNumber]/page.js",
+  "/page": "app/page.js",
+  "/product/[slug]/page": "app/product/[slug]/page.js",
+  "/shop/page": "app/shop/page.js",
+  "/track/page": "app/track/page.js"
+}

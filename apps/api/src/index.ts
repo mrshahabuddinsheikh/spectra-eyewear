@@ -9,6 +9,7 @@ import { reelRoutes } from './routes/reels.js';
 import { socialProofRoutes } from './routes/social-proof.js';
 import { opticianAiRoutes } from './routes/optician-ai.js';
 import { backupRoutes } from './routes/backup.js';
+import { deployRoutes } from './routes/deploy.js';
 
 dotenv.config();
 
@@ -64,6 +65,7 @@ export async function bootstrap() {
   await fastify.register(socialProofRoutes);
   await fastify.register(opticianAiRoutes);
   await fastify.register(backupRoutes);
+  await fastify.register(deployRoutes);
 
   // Server Listen
   const PORT = Number(process.env.PORT || 4000);

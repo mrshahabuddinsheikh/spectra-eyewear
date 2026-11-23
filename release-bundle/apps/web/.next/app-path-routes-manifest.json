@@ -1,0 +1,17 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/admin/backup/page": "/admin/backup",
+  "/admin/page": "/admin",
+  "/admin/products/page": "/admin/products",
+  "/admin/reels/page": "/admin/reels",
+  "/admin/risk/page": "/admin/risk",
+  "/admin/social-proof/page": "/admin/social-proof",
+  "/checkout/page": "/checkout",
+  "/customizer/page": "/customizer",
+  "/order/[orderNumber]/page": "/order/[orderNumber]",
+  "/page": "/",
+  "/product/[slug]/page": "/product/[slug]",
+  "/shop/page": "/shop",
+  "/track/page": "/track"
+}

@@ -1,0 +1,40 @@
+1:"$Sreact.fragment"
+2:"/_next/static/chunks/3qfy96eoyh-ek.js"
+3:"/_next/static/chunks/3pnkjd7o1-_p3.js"
+4:"/_next/static/chunks/0z6bihtkdzy9i.js"
+5:"/_next/static/chunks/0nrqa05ytvph6.js"
+6:I[52006,["$2","$3","$4","$5"],"ThemeProvider"]
+7:I[96273,["$2","$3","$4","$5"],"CartProvider"]
+8:I[76647,["$2","$3","$4","$5"],"Navbar"]
+9:I[39756,["$2","$3","$4","$5"],"default"]
+a:I[37457,["$2","$3","$4","$5"],"default"]
+b:I[51072,["$2","$3","$4","$5"],"CartDrawer"]
+c:"SocialProofToast"
+d:I[8191,["$2","$3","$4","$5"],"$c"]
+e:"FloatingOpticianBot"
+f:I[62946,["$2","$3","$4","$5"],"$e"]
+10:I[70066,["$2","$3","$4","$5"],"Footer"]
+12:"ClientSegmentRoot"
+13:I[92825,["$2","$3","$4","$5"],"$12"]
+14:"/_next/static/chunks/14dz4b90p8_aw.js"
+15:I[79062,["$2","$3","$4","$5","$14"],"default"]
+18:I[47257,["$2","$3","$4","$5"],"ClientPageRoot"]
+19:"/_next/static/chunks/172a9wehoic80.js"
+1a:I[54436,["$2","$3","$4","$5","$14","$19"],"default"]
+1d:I[97367,["$2","$3","$4","$5"],"OutletBoundary"]
+1e:"$Sreact.suspense"
+20:"ViewportBoundary"
+21:I[97367,["$2","$3","$4","$5"],"$20"]
+23:"MetadataBoundary"
+24:I[97367,["$2","$3","$4","$5"],"$23"]
+26:I[68027,["$2","$3","$4","$5"],"default",1]
+:HL["/_next/static/chunks/02ga32hs00baj.css","style"]
+17:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":[["$","$L18",null,{"Component":"$1a","serverProvidedParams":{"searchParams":{},"params":"$11:0:1:d:r:props:children:1:props:serverProvidedParams:params","promises":["$@1b","$@1c"]}}],[["$","script","script-0",{"src":"/_next/static/chunks/172a9wehoic80.js","async":true,"nonce":"$undefined"}]],["$","$L1d",null,{"children":["$","$1e",null,{"name":"Next.MetadataOutlet","children":"$@1f"}]}]]}],"p":false,"v":null}}]]
+11:[["children",{"s":"admin","h":512,"d":{"r":["$","$1","c",{"children":[[["$","script","script-0",{"src":"/_next/static/chunks/14dz4b90p8_aw.js","async":true,"nonce":"$undefined"}]],["$","$L13",null,{"Component":"$15","slots":{"children":["$","$L9",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$La",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]},"serverProvidedParams":{"params":{},"promises":["$@16"]}}]]}],"p":false,"v":null},"c":"$Q17"}]]
+0:{"P":null,"c":["","admin"],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/02ga32hs00baj.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/3qfy96eoyh-ek.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/3pnkjd7o1-_p3.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/0z6bihtkdzy9i.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0nrqa05ytvph6.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":["$","body",null,{"className":"min-h-screen flex flex-col antialiased","children":["$","$L6",null,{"children":["$","$L7",null,{"children":[["$","div",null,{"className":"ambient-glow","aria-hidden":"true"}],["$","$L8",null,{}],["$","main",null,{"className":"flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 pt-6","children":["$","$L9",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$La",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$Lb",null,{}],["$","$Ld",null,{}],["$","$Lf",null,{}],["$","$L10",null,{}]]}]}]}]}]]}],"p":false,"v":null},"c":"$Q11"},"h":{"r":["$","$1","h",{"children":[null,["$","$L21",null,{"children":"$L22"}],["$","$L24",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$1e",null,{"name":"Next.Metadata","children":"$L25"}]}],null]}],null]}],"p":false,"v":null}},"m":"$undefined","G":["$26",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/02ga32hs00baj.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"HGyQ7dtCK36a5UIbArWh_"}
+16:"$11:0:1:d:r:props:children:1:props:serverProvidedParams:params"
+1b:{}
+1c:"$11:0:1:d:r:props:children:1:props:serverProvidedParams:params"
+22:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1f:null
+25:[["$","title","0",{"children":"Spectra Eyewear — Luxury 3D Frames, Shoppable Reels & Cash on Delivery Pakistan"}],["$","meta","1",{"name":"description","content":"Customize procedural 3D eyewear, watch TikTok-style shoppable video reels, and pay Cash on Delivery anywhere in Pakistan. Hand-crafted Italian acetate and titanium frames with Blue-Cut and Polarized UV400 lenses."}],["$","meta","2",{"name":"keywords","content":"eyewear pakistan,sunglasses karachi,glasses lahore,3d glasses customizer,shoppable reels,cash on delivery eyewear,blue-cut glasses pakistan,polarized sunglasses pk"}]]

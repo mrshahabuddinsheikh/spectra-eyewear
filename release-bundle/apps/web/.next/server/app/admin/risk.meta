@@ -1,0 +1,39 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/admin/layout,_N_T_/admin/risk/layout,_N_T_/admin/risk/page,_N_T_/admin/risk"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/admin/risk/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 96,
+            "slots": {
+              "children": {
+                "hints": 160,
+                "slots": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/d74cd8ee8d2abf24053f0abab02ed6858a15a185e5289614dd8b2dc9f8ff0063/$/admin/risk",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/admin/risk/page"
+    },
+    "isFallback": false
+  }
+}
