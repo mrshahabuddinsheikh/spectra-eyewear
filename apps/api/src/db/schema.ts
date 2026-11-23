@@ -21,6 +21,7 @@ export const products = mysqlTable('products', {
   frameMaterial: varchar('frame_material', { length: 50 }).notNull(), // acetate, matte-black, titanium, gold-metal, silver-metal, tortoiseshell
   recommendedFaceShapes: text('recommended_face_shapes'), // round, oval, square, diamond, heart
   images: json('images').$type<string[]>(),
+  tryOnImage: text('try_on_image'), // transparent front-facing PNG for live camera & selfie try-on
   isBestseller: boolean('is_bestseller').default(false),
   isNew: boolean('is_new').default(false),
   isActive: boolean('is_active').default(true),

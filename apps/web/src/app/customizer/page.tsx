@@ -22,7 +22,7 @@ export default function CustomizerPage() {
             3D Frame & Lens Customizer
           </h1>
           <p className="text-xs text-muted mt-1">
-            Build your bespoke eyewear. Inspect every hinge, brow bar, and lens tint in real-time 3D.
+            Build your bespoke eyewear. Inspect every hinge in 3D or click <strong>📸 Live Camera Try-On</strong> to preview frames live on your face!
           </p>
         </div>
 

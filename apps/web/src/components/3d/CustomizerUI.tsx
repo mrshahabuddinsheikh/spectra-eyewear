@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { ProceduralGlassesCanvas } from './ProceduralGlassesCanvas';
 import { FaceShapeGuide } from './FaceShapeGuide';
 import { FRAME_MATERIALS, LENS_TINTS, FrameShapeType } from './MaterialsAndTints';
+import { VirtualTryOnModal } from '../try-on/VirtualTryOnModal';
 import { useCart } from '../../context/CartContext';
 import { useRouter } from 'next/navigation';
 import {
@@ -17,6 +18,7 @@ import {
   ShieldCheck,
   Truck,
   RotateCcw,
+  Camera,
 } from 'lucide-react';
 
 const SHAPES: { key: FrameShapeType; label: string; icon: string }[] = [
@@ -37,6 +39,7 @@ export function CustomizerUI() {
   const [isExploded, setIsExploded] = useState(false);
   const [wireframe, setWireframe] = useState(false);
   const [autoRotate, setAutoRotate] = useState(true);
+  const [showTryOn, setShowTryOn] = useState(false);
 
   const { addItem } = useCart();
   const router = useRouter();
@@ -99,6 +102,15 @@ export function CustomizerUI() {
       {/* 3D Canvas Viewport (7 Cols) */}
       <div className="lg:col-span-7 flex flex-col gap-4">
         <div className="glass relative rounded-[32px] p-2 overflow-hidden border border-white/60 dark:border-white/10 shadow-2xl">
+          {/* Live Camera Try-On Floating Pill */}
+          <button
+            onClick={() => setShowTryOn(true)}
+            className="absolute top-4 left-4 z-10 flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 via-purple-600 to-accent text-white px-4 py-2 text-xs font-black shadow-xl hover:scale-105 active:scale-95 transition-all"
+          >
+            <Camera className="w-4 h-4 animate-pulse" />
+            <span>📸 Live Camera Try-On</span>
+          </button>
+
           {/* Top Floating Controls */}
           <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 glass rounded-full p-1.5 shadow-md">
             <button
@@ -301,6 +313,14 @@ export function CustomizerUI() {
         {/* Action Buttons */}
         <div className="flex flex-col gap-3">
           <button
+            onClick={() => setShowTryOn(true)}
+            className="btn btn-glass h-13 w-full text-sm font-bold flex items-center justify-center gap-2 border-accent/40 text-accent hover:bg-accent/10 shadow-md"
+          >
+            <Camera className="w-4 h-4 text-accent animate-pulse" />
+            <span>📸 Try on My Face in Real-Time (Live Camera)</span>
+          </button>
+
+          <button
             onClick={handleExpressBuy}
             className="btn btn-primary h-14 w-full text-base font-bold shadow-lg flex items-center justify-center gap-2"
           >
@@ -317,6 +337,15 @@ export function CustomizerUI() {
           </button>
         </div>
       </div>
+
+      {/* Live AR Camera Virtual Try-On Modal */}
+      <VirtualTryOnModal
+        isOpen={showTryOn}
+        onClose={() => setShowTryOn(false)}
+        initialShape={frameShape}
+        initialMaterial={materialKey}
+        initialLens={lensKey}
+      />
     </div>
   );
 }

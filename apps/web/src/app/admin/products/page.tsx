@@ -86,6 +86,7 @@ export default function AdminProductsPage() {
               stock: 30,
               isBestseller: false,
               isNew: true,
+              tryOnImage: '',
               images: ['https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80'],
             })
           }
@@ -104,6 +105,7 @@ export default function AdminProductsPage() {
               <th className="p-4">Frame Model</th>
               <th className="p-4">3D Shape</th>
               <th className="p-4">Material</th>
+              <th className="p-4">AR Try-On</th>
               <th className="p-4">Base Price</th>
               <th className="p-4">Stock</th>
               <th className="p-4">Status</th>
@@ -119,6 +121,18 @@ export default function AdminProductsPage() {
                 </td>
                 <td className="p-4 capitalize font-semibold">{p.frameShape}</td>
                 <td className="p-4 capitalize text-muted">{p.frameMaterial}</td>
+                <td className="p-4">
+                  {p.tryOnImage ? (
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                      Custom Photo
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400 text-[10px] font-medium">
+                      HD Vector
+                    </span>
+                  )}
+                </td>
                 <td className="p-4 font-bold text-ink">Rs. {p.basePrice?.toLocaleString()}</td>
                 <td className="p-4 font-semibold">{p.stock} units</td>
                 <td className="p-4">
@@ -234,6 +248,40 @@ export default function AdminProductsPage() {
                     className="w-full h-10 px-3 rounded-xl bg-white/70 dark:bg-slate-900/70 border border-black/10 dark:border-white/10 text-ink outline-none"
                   />
                 </div>
+              </div>
+
+              {/* Try-On Transparent Photo Input */}
+              <div className="p-3.5 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 space-y-2">
+                <div className="flex items-center justify-between">
+                  <label className="font-bold text-ink text-xs">
+                    Virtual AR Try-On Photo (Front-Facing Transparent PNG)
+                  </label>
+                  {editingProduct.tryOnImage ? (
+                    <span className="text-[10px] text-emerald-500 font-bold">✓ Active Custom Photo</span>
+                  ) : (
+                    <span className="text-[10px] text-muted">Using HD Vector fallback</span>
+                  )}
+                </div>
+                <input
+                  type="text"
+                  value={editingProduct.tryOnImage || ''}
+                  onChange={(e) => setEditingProduct({ ...editingProduct, tryOnImage: e.target.value })}
+                  placeholder="https://.../glasses-front-cutout.png"
+                  className="w-full h-10 px-3 rounded-xl bg-white dark:bg-slate-900 border border-black/10 dark:border-white/10 text-ink outline-none text-xs font-mono"
+                />
+                <p className="text-[11px] text-muted leading-relaxed">
+                  📸 Upload or paste transparent PNG URL of front-facing glasses (remove background using Canva or remove.bg). 
+                  Customers will see this exact frame overlaid on their camera & selfie photos!
+                </p>
+                {editingProduct.tryOnImage && (
+                  <div className="p-2 rounded-xl bg-slate-950/20 border border-black/10 flex items-center justify-center h-20">
+                    <img
+                      src={editingProduct.tryOnImage}
+                      alt="Try-On Preview"
+                      className="max-h-full max-w-[200px] object-contain drop-shadow-md"
+                    />
+                  </div>
+                )}
               </div>
 
               <div className="flex gap-2 pt-2">

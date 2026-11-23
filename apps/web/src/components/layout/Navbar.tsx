@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useCart } from '../../context/CartContext';
 import { useTheme } from '../../context/ThemeContext';
 import { SpinWheelModal } from '../gamification/SpinWheelModal';
+import { VirtualTryOnModal } from '../try-on/VirtualTryOnModal';
 import {
   Sparkles,
   ShoppingBag,
@@ -17,12 +18,14 @@ import {
   Menu,
   X,
   Truck,
+  Camera,
 } from 'lucide-react';
 
 export function Navbar() {
   const { totalCount, setIsCartOpen } = useCart();
   const { theme, toggleTheme } = useTheme();
   const [showSpinWheel, setShowSpinWheel] = useState(false);
+  const [showTryOn, setShowTryOn] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -87,6 +90,16 @@ export function Navbar() {
 
           {/* Right Action Icons */}
           <div className="flex items-center gap-2">
+            {/* Live Camera Try-On Button */}
+            <button
+              onClick={() => setShowTryOn(true)}
+              className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-rose-500 to-accent text-white px-3.5 py-1.5 text-xs font-black shadow-md hover:scale-105 active:scale-95 transition-all"
+            >
+              <Camera className="w-3.5 h-3.5 animate-pulse" />
+              <span className="hidden sm:inline">Camera Try-On</span>
+              <span className="sm:hidden">Try-On</span>
+            </button>
+
             {/* Spin to Win Button */}
             <button
               onClick={() => setShowSpinWheel(true)}
@@ -132,6 +145,16 @@ export function Navbar() {
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-2 glass-strong rounded-3xl p-5 shadow-2xl flex flex-col gap-3 text-xs font-bold text-ink animate-slide-down">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setShowTryOn(true);
+              }}
+              className="flex items-center justify-between p-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-accent text-white font-black"
+            >
+              <span>📸 Live AR Camera Try-On</span>
+              <Camera className="w-4 h-4 animate-pulse" />
+            </button>
             <Link
               href="/customizer"
               onClick={() => setMobileMenuOpen(false)}
@@ -159,6 +182,9 @@ export function Navbar() {
 
       {/* Gamified Spin Wheel Modal */}
       <SpinWheelModal isOpen={showSpinWheel} onClose={() => setShowSpinWheel(false)} />
+
+      {/* Live AR Camera Virtual Try-On Modal */}
+      <VirtualTryOnModal isOpen={showTryOn} onClose={() => setShowTryOn(false)} />
     </>
   );
 }

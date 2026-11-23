@@ -3,6 +3,7 @@ import { fetchProductBySlug, fetchProducts } from '../../../lib/api';
 import { notFound } from 'next/navigation';
 import { ProceduralGlassesCanvas } from '../../../components/3d/ProceduralGlassesCanvas';
 import { FRAME_MATERIALS, LENS_TINTS, FrameShapeType } from '../../../components/3d/MaterialsAndTints';
+import { ProductTryOnButton } from '../../../components/try-on/ProductTryOnButton';
 import Link from 'next/link';
 import {
   ShieldCheck,
@@ -106,16 +107,21 @@ export default async function ProductDetailPage({ params }: Props) {
 
             {/* Direct Action Buttons */}
             <div className="space-y-2.5 pt-2">
+              <ProductTryOnButton
+                product={product}
+                frameShape={frameShape}
+                className="btn btn-primary h-14 w-full text-base font-bold shadow-lg flex items-center justify-center gap-2"
+              />
               <Link
                 href="/customizer"
-                className="btn btn-primary h-14 w-full text-base font-bold shadow-lg flex items-center justify-center gap-2"
+                className="btn btn-glass h-12 w-full text-xs font-bold flex items-center justify-center gap-2"
               >
                 <span>Customize Colors & Lenses in 3D</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/checkout"
-                className="btn btn-glass h-12 w-full text-xs font-bold flex items-center justify-center gap-2"
+                className="btn btn-ghost h-11 w-full text-xs font-semibold flex items-center justify-center gap-2"
               >
                 <span>⚡ Express 1-Page COD Checkout</span>
               </Link>

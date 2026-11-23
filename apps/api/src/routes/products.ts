@@ -50,6 +50,7 @@ export const productRoutes: FastifyPluginAsync = async (fastify) => {
       frameMaterial: body.frameMaterial,
       recommendedFaceShapes: body.recommendedFaceShapes || 'round,oval,square',
       images: body.images || ['https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80'],
+      tryOnImage: body.tryOnImage || null,
       isBestseller: Boolean(body.isBestseller),
       isNew: Boolean(body.isNew),
       isActive: body.isActive !== undefined ? Boolean(body.isActive) : true,
