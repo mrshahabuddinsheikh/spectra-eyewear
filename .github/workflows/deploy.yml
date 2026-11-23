@@ -1,4 +1,4 @@
-name: Spectra Eyewear CI/CD & Auto-Deploy
+name: "Spectra Eyewear CI/CD and Auto-Deploy"
 
 on:
   push:
@@ -14,31 +14,30 @@ jobs:
       contents: write
 
     steps:
-      - name: 🛒 Checkout Repository
+      - name: "Checkout Repository"
         uses: actions/checkout@v4
 
-      - name: 🟢 Setup Node.js v20.x
+      - name: "Setup Node.js v20.x"
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
-      - name: 📦 Step 1: Install Monorepo Dependencies
+      - name: "Step 1: Install Monorepo Dependencies"
         run: |
-          npm ci --include=dev
+          npm install --include=dev
 
-      - name: ⚡ Step 2: Compile Fastify Standalone Bundle
+      - name: "Step 2: Compile Fastify Standalone Bundle"
         run: |
           npm run build:api
 
-      - name: 🏗️ Step 3: Build Next.js Production Storefront
+      - name: "Step 3: Build Next.js Production Storefront"
         run: |
           npm run build:web
         env:
           NODE_ENV: production
           NEXT_TELEMETRY_DISABLED: 1
 
-      - name: 📦 Step 4: Package Production Release Bundle
+      - name: "Step 4: Package Production Release Bundle"
         run: |
           mkdir -p release-bundle
           cp package.json server.js release-bundle/
@@ -57,7 +56,6 @@ jobs:
           fi
 
           mkdir -p release-bundle/apps/web/.next
-          # Copy .next excluding cache to optimize bundle size
           for item in apps/web/.next/*; do
             if [ "$(basename "$item")" != "cache" ]; then
               cp -r "$item" release-bundle/apps/web/.next/
@@ -67,19 +65,19 @@ jobs:
           tar -czf spectra-release.tar.gz -C release-bundle .
           ls -lh spectra-release.tar.gz
 
-      - name: 🚀 Step 5: Publish Release to GitHub Releases
+      - name: "Step 5: Publish Release to GitHub Releases"
         uses: softprops/action-gh-release@v2
         with:
           tag_name: latest
-          name: Latest Verified Production Release
+          name: "Latest Verified Production Release"
           files: spectra-release.tar.gz
           draft: false
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 🌐 Step 6: Trigger Live Domain Auto-Update
+      - name: "Step 6: Trigger Live Domain Auto-Update"
         run: |
           echo "Triggering auto-update on https://optics.newquettaautos.com..."
           curl -s -X POST -H "x-deploy-token: spectra_secure_deploy_2026" "https://optics.newquettaautos.com/api/v1/deploy-webhook" || true
-          echo "✅ Auto-deploy signal delivered!"
+          echo "Auto-deploy signal delivered!"
